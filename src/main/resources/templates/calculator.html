@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/stylesheets/calculator.css"
+    />
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <h1>Calculator</h1>
+    <p>Give grades to the numeric activities</p>
+    <form id="calculator">
+      <table>
+        <tr>
+          <th><p>Name</p></th>
+          <th><p>Short Name</p></th>
+          <th><p>Weight</p></th>
+          <th><p>Grade</p></th>
+          <th><p>Percentage</p></th>
+        </tr>
+        <tr>
+          <th>Activity 1</th>
+          <th>A1</th>
+          <th><input type="number" name="A1weight" id="A1weight" /></th>
+          <th>
+            <input type="number" name="A1score" id="A1score" />
+            /
+            <input type="number" name="A1total" id="A1total" />
+          </th>
+          <th id="P1"></th>
+        </tr>
+        <tr>
+          <th>Activity 2</th>
+          <th>A2</th>
+          <th><input type="number" name="A2weight" id="A2weight" /></th>
+          <th>
+            <input type="number" name="A2score" id="A2score" />
+            /
+            <input type="number" name="A2total" id="A2total" />
+          </th>
+          <th id="P2"></th>
+        </tr>
+        <tr>
+          <th>Activity 3</th>
+          <th>A3</th>
+          <th><input type="number" name="A3weight" id="A3weight" /></th>
+          <th>
+            <input type="number" name="A3score" id="A3score" />
+            /
+            <input type="number" name="A3total" id="A3total" />
+          </th>
+          <th id="P3"></th>
+        </tr>
+        <tr>
+          <th>Activity 4</th>
+          <th>A4</th>
+          <th><input type="number" name="A4weight" id="A4weight" /></th>
+          <th>
+            <input type="number" name="A4score" id="A4score" />
+            /
+            <input type="number" name="A4total" id="A4total" />
+          </th>
+          <th id="P4"></th>
+        </tr>
+      </table>
+
+      <h2 id="result">Result:</h2>
+
+      <div style="float: left">
+        <button onclick="getWeight()" value="Submit" type="button">
+          Weighted
+        </button>
+        <button onclick="getMean()" value="Submit" type="button">Mean</button>
+      </div>
+    </form>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
