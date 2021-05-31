@@ -20,7 +20,7 @@ function getWeight() {
         let score = Number(document.getElementById("A" + i + "score").value);
         let total = Number(document.getElementById("A" + i + "total").value);
         let weight = Number(document.getElementById("A" + i + "weight").value);
-        document.getElementById("P"+i).innerHTML = (score/total)*100 + "%";
+        document.getElementById("P"+i).innerHTML = (score/total)*100 + "% unweighted average";
 
         totalweight += weight;
         totalscore +=

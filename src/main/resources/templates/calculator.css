@@ -1,4 +1,15 @@
-th, td {
-    border: 1px solid black;
-    padding: 20px;
-  }
+th,
+td {
+  color: #dc3545;
+  border: 2px solid black;
+  padding: 50px;
+}
+
+body {
+  background-color: #dc3545;
+}
+
+.result,
+#result {
+  color: #dc3545;
+}
