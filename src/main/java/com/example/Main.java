@@ -49,11 +49,6 @@ public class Main {
   }
 
   @RequestMapping("/")
-  String index() {
-    return "index";
-  }
-
-  @RequestMapping("/calculator/")
   String calculator() {
     return "calculator";
   }
