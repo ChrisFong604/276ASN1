@@ -37,6 +37,9 @@ function addAssignment() {
 
 function removeAssignment() {
     numAss--;
+    if(numAss < 0) {
+        numAss=0;
+    }
     var table = document.getElementById("maintable");
     table.deleteRow(-1);    
 }
