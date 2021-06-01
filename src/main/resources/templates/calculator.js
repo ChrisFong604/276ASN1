@@ -2,6 +2,8 @@
 
 //Variable for number of assignments. Incremented/Decremented with adding/removing assignments
 var numAss = 4;
+var percentages = [];
+var weights = [];
 
 function addAssignment() {
     numAss++;
@@ -43,110 +45,65 @@ function removeAssignment() {
 function percentCalculator(id) {
     let score;
     let total;
+    let percent;
+    weights[Number(id.charAt(1))] = document.getElementById("A"+id.charAt(1)+"weight").value;
     switch(id.charAt(2)) {
         case "t":
             score = Number(document.getElementById("A"+id.charAt(1)+"score").value);
             total = Number(document.getElementById(id).value);
-            if(total <= 0) {
+            if(total <= 0 || (score > total)) {
                 document.getElementById("P"+id.charAt(1)).innerHTML = "";
                 break;
             }
-            document.getElementById("P"+id.charAt(1)).innerHTML = ((score/total)*100).toFixed(2) + "%";
+            percent = ((score/total)*100).toFixed(2);
+            percentages[Number(id.charAt(1))] = percent;
+            document.getElementById("P"+id.charAt(1)).innerHTML = percent + "%";
             break;
 
         case "s":
             score = Number(document.getElementById(id).value);
             total = Number(document.getElementById("A"+id.charAt(1)+"total").value);
-            if(total <= 0) {
+            if(total <= 0 || (score > total)) {
                 document.getElementById("P"+id.charAt(1)).innerHTML = "";
                 break;
             }
-            document.getElementById("P"+id.charAt(1)).innerHTML = ((score/total)*100).toFixed(2) + "%";
+            percent = ((score/total)*100).toFixed(2);
+            percentages[Number(id.charAt(1))] = percent;
+            document.getElementById("P"+id.charAt(1)).innerHTML = percent + "%";
             break;
     }
-}
-
-function getWeight2() {
-    console.log(document.getElementById("P1").innerHTML);
-    var totalscore = 0;
-    var totalweight = 0;
-    var flag = false;
-    for(i=1; i<=numAss; i++) {
-        let score = Number(document.getElementById("A" + i + "score").value);
-        let total = Number(document.getElementById("A" + i + "total").value);
-        if (total == 0) {
-            flag = true;
-            break;
-        }
-        let weight = Number(document.getElementById("A" + i + "weight").value);
-
-        totalweight += weight;
-        totalscore +=
-            weight*(score/total);
-    }
-    if(flag == true) {
-        return document.getElementById("result").innerHTML = "Invalid Input";
-    }
-    // document.getElementById("result").innerHTML += "Result: " + totalscore/totalweight;
-    document.getElementById("result").innerHTML = "Result: " + (totalscore/totalweight)*100+"% weighted average";
-}
-
-function getMean2() {
-    var totalscore = 0;
-    var flag = false;
-    for(i=1; i<=numAss; i++) {
-        let score = Number(document.getElementById("A" + i + "score").value);
-        let total = Number(document.getElementById("A" + i + "total").value);
-        if (total == 0) { 
-            flag = true; 
-            break;
-        }
-    }
-    if(flag == true) {
-        return document.getElementById("result").innerHTML = "Invalid Input";
-    }
-    document.getElementById("result").innerHTML = "Result: " + (totalscore/numAss)*100+"% mean";
+    console.log(percentages[Number(id.charAt(1))]);
 }
 
 
-function getMean() {
-    var totalscore = 0;
-    var flag = false;
-    for(i=1; i<=numAss; i++) {
-        let score = Number(document.getElementById("A" + i + "score").value);
-        let total = Number(document.getElementById("A" + i + "total").value);
-        if (total == 0) { 
-            flag = true; 
-            break;
-        }
-    }
-    if(flag == true) {
-        return document.getElementById("result").innerHTML = "Invalid Input";
-    }
-    document.getElementById("result").innerHTML = "Result: " + (totalscore/numAss)*100+"% mean";
-}
 
 function getWeight() {
-    console.log(document.getElementById("P1").innerHTML);
-    var totalscore = 0;
-    var totalweight = 0;
-    var flag = false;
-    for(i=1; i<=numAss; i++) {
-        let score = Number(document.getElementById("A" + i + "score").value);
-        let total = Number(document.getElementById("A" + i + "total").value);
-        if (total == 0) {
-            flag = true;
-            break;
-        }
-        let weight = Number(document.getElementById("A" + i + "weight").value);
+    let i, rval = 0, 
+    actualAss = numAss,
+    totalweight = 0;
 
-        totalweight += weight;
-        totalscore +=
-            weight*(score/total);
+    for(i=1; i<=numAss; i++) {
+        if(percentages[i] === undefined) {
+            actualAss--;
+            continue;
+        }
+        rval += Number(percentages[i])*Number(weights[i]);
+        console.log(weights[i]);
+        totalweight += Number(weights[i]);
     }
-    if(flag == true) {
-        return document.getElementById("result").innerHTML = "Invalid Input";
+    document.getElementById("result").innerHTML = "Result: " + (rval/totalweight).toFixed(2)+"% is the weighted mean";
+}
+
+function getMean() {
+    let i, rval = 0, actualAss = numAss;
+
+    for(i=1; i<=numAss; i++) {
+        if(percentages[i] === undefined) {
+            actualAss--;
+            continue;
+        }
+        rval += Number(percentages[i]);
     }
-    // document.getElementById("result").innerHTML += "Result: " + totalscore/totalweight;
-    document.getElementById("result").innerHTML = "Result: " + (totalscore/totalweight)*100+"% weighted average";
+    document.getElementById("result").innerHTML = "Result: " + (rval/actualAss).toFixed(2) +"% is the mean";
+    return;
 }
