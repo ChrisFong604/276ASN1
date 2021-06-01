@@ -15,6 +15,7 @@ table {
   width: 80%;
 }
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 0px;
   font-family: "Times New Roman", Times, serif;
   background-color: #a6192e;
@@ -30,6 +31,7 @@ button {
   text-decoration: none;
   color: white;
   background-color: #a5251c;
+  padding: 4px;
 }
 input {
   width: 50%;
