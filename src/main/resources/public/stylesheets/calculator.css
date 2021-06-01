@@ -34,7 +34,6 @@ button {
   background-color: #a5251c;
   padding: 4px;
   position: relative;
-  left: 100px;
 }
 input {
   width: 50%;
@@ -48,9 +47,9 @@ input {
   border: 1px #c8cacb;
 }
 #calculator {
-  padding: 20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: white;
 }
 .categories {
