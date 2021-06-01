@@ -34,6 +34,7 @@ button {
   background-color: #a5251c;
   padding: 4px;
   position: relative;
+  left: 100px;
 }
 input {
   width: 50%;
