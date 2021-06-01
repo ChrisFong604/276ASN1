@@ -26,6 +26,7 @@ header {
   height: 100%;
 }
 button {
+  margin: 3px;
   border: none;
   border-radius: 3px;
   text-decoration: none;
