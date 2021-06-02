@@ -75,7 +75,6 @@ function percentCalculator(id) {
             document.getElementById("P"+id.charAt(1)).innerHTML = percent + "%";
             break;
     }
-    console.log(percentages[Number(id.charAt(1))]);
 }
 
 
@@ -91,7 +90,6 @@ function getWeight() {
             continue;
         }
         rval += Number(percentages[i])*Number(weights[i]);
-        console.log(weights[i]);
         totalweight += Number(weights[i]);
     }
     if(totalweight === 0) {
