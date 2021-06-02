@@ -92,10 +92,12 @@ function getWeight() {
         rval += Number(percentages[i])*Number(weights[i]);
         totalweight += Number(weights[i]);
     }
-    if(totalweight <= 0) {
+    let weightedmean = (rval/totalweight).toFixed(2);
+    if(isNaN(weightedmean) || actualAss <= 0) {
         document.getElementById("result").innerHTML = "Invalid weights inputted";
+        return;
     }
-    document.getElementById("result").innerHTML = "Result: " + (rval/totalweight).toFixed(2)+"% is the weighted mean";
+    document.getElementById("result").innerHTML = "Result: " + weightedmean +"% is the weighted mean";
 }
 
 function getMean() {
@@ -108,8 +110,10 @@ function getMean() {
         }
         rval += Number(percentages[i]);
     }
-    if(actualAss <= 0) {
-        document.getElementById("result").innerHTML = "Invalid inputs detected";
+    let mean = (rval/actualAss).toFixed(2);
+    if (isNaN(mean) || actualAss <= 0) {
+        document.getElementById("result").innerHTML = "Invalid inputs";
+        return;
     }
-    document.getElementById("result").innerHTML = "Result: " + (rval/actualAss).toFixed(2) +"% is the mean";
+    document.getElementById("result").innerHTML = "Result: " + mean +"% is the mean";
 }
