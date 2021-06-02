@@ -94,6 +94,9 @@ function getWeight() {
         console.log(weights[i]);
         totalweight += Number(weights[i]);
     }
+    if(totalweight === 0) {
+        document.getElementById("result").innerHTML = "Invalid weights inputted";
+    }
     document.getElementById("result").innerHTML = "Result: " + (rval/totalweight).toFixed(2)+"% is the weighted mean";
 }
 
@@ -107,6 +110,8 @@ function getMean() {
         }
         rval += Number(percentages[i]);
     }
+    if(totalweight === 0) {
+        document.getElementById("result").innerHTML = "Invalid inputs detected";
+    }
     document.getElementById("result").innerHTML = "Result: " + (rval/actualAss).toFixed(2) +"% is the mean";
-    return;
 }
