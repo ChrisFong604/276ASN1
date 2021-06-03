@@ -97,7 +97,7 @@ function getWeight() {
             return;
         }
         if (weights[i] <= 0) {
-            document.getElementById("result").innerHTML = "Invalid weights inputted";
+            document.getElementById("result").innerHTML = "Invalid inputs";
             return;
         }
         rval += Number(percentages[i]) * Number(weights[i]);
@@ -105,7 +105,7 @@ function getWeight() {
     }
     let weightedmean = (rval / totalweight).toFixed(2);
     if (isNaN(weightedmean) || actualAss <= 0) {
-        document.getElementById("result").innerHTML = "Invalid weights inputted";
+        document.getElementById("result").innerHTML = "Invalid inputs";
         return;
     }
     document.getElementById("result").innerHTML = "Result: " + weightedmean + "% is the weighted mean";
