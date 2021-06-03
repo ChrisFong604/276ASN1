@@ -1,100 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/calculator.css">
-    <title>Grade Calculator</title>
-    <link rel="icon" href="SFU Logo.ico">
-    <script src = "./calculator.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <br>
-    </header>
-      <form id="calculator">
-      <h1>Grade Calculator</h1>
-          <div class="functionblock">
-          <h3 class="red">Activities</h3>
-              <p>Give grades to the numeric activities</p>
-              <table class="tableblock" id="maintable">
-                  <tr>
-                      <th class="categories"><p>Name</p></th>
-                      <th class="categories"><p>Short Name</p></th>
-                      <th class="categories"><p>Weight</p></th>
-                      <th class="categories"><p>Grade</p></th>
-                      <th class="categories"><p>Percentage</p></th>
-                  </tr>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./stylesheets/calculator.css">
+        <title>Grade Calculator</title>
+        <link rel="icon" href="SFU Logo.ico">
+        <script src="./calculator.js" defer></script>
+    </head>
 
-                  <tr>
-                      <th>Activity 1</th>
-                      <th>A1</th>
-                      <th><input type="number" name="A1weight" id="A1weight"  onchange="percentCalculator(this.id)"/></th>
-                      <th>
-                          <input type="number" name="A1score" id="A1score" onchange="percentCalculator(this.id)"/>
-                          /
-                          <input type="number" name="A1total" id="A1total" onchange="percentCalculator(this.id)"/>
-                      </th>
-                      <th id="P1"></th>
-                  </tr>
+    <body>
+        <div class="mainblock">
+            <header>
+                <br>
+            </header>
+            <form id="calculator">
+                <h1>Grade Calculator</h1>
+                <div class="functionblock">
+                    <h3 class="red">Activities</h3>
+                    <p>Give grades to the numeric activities</p>
+                    <table class="tableblock" id="maintable">
+                        <tr>
+                            <th class="categories">
+                                <p>Name</p>
+                            </th>
+                            <th class="categories">
+                                <p>Short Name</p>
+                            </th>
+                            <th class="categories">
+                                <p>Weight</p>
+                            </th>
+                            <th class="categories">
+                                <p>Grade</p>
+                            </th>
+                            <th class="categories">
+                                <p>Percentage</p>
+                            </th>
+                        </tr>
 
-                  <tr>
-                      <th>Activity 2</th>
-                      <th>A2</th>
-                      <th><input type="number" name="A2weight" id="A2weight" onchange="percentCalculator(this.id)"/></th>
-                      <th>
-                          <input type="number" name="A2score" id="A2score" onchange="percentCalculator(this.id)"/>
-                          /
-                          <input type="number" name="A2total" id="A2total" onchange="percentCalculator(this.id)"/>
-                      </th>
-                      <th id="P2"></th>
-                  </tr>
+                        <tr>
+                            <th>Activity 1</th>
+                            <th>A1</th>
+                            <th><input type="number" name="A1weight" id="A1weight" onchange="percentCalculator(this.id)" /></th>
+                            <th>
+                                <input type="number" name="A1score" id="A1score" onchange="percentCalculator(this.id)" /> /
+                                <input type="number" name="A1total" id="A1total" onchange="percentCalculator(this.id)" />
+                            </th>
+                            <th id="P1"></th>
+                        </tr>
 
-                  <tr>
-                      <th>Activity 3</th>
-                      <th>A3</th>
-                      <th><input type="number" name="A3weight" id="A3weight" onchange="percentCalculator(this.id)"/></th>
-                      <th>
-                          <input type="number" name="A3score" id="A3score" onchange="percentCalculator(this.id)"/>
-                          /
-                          <input type="number" name="A3total" id="A3total" onchange="percentCalculator(this.id)"/>
-                      </th>
-                      <th id="P3"></th>
-                  </tr>
+                        <tr>
+                            <th>Activity 2</th>
+                            <th>A2</th>
+                            <th><input type="number" name="A2weight" id="A2weight" onchange="percentCalculator(this.id)" /></th>
+                            <th>
+                                <input type="number" name="A2score" id="A2score" onchange="percentCalculator(this.id)" /> /
+                                <input type="number" name="A2total" id="A2total" onchange="percentCalculator(this.id)" />
+                            </th>
+                            <th id="P2"></th>
+                        </tr>
 
-                  <tr>
-                      <th>Activity 4</th>
-                      <th>A4</th>
-                      <th><input type="number" name="A4weight" id="A4weight" onchange="percentCalculator(this.id)"/></th>
-                      <th>
-                          <input type="number" name="A4score" id="A4score" onchange="percentCalculator(this.id)"/>
-                          /
-                          <input type="number" name="A4total" id="A4total" onchange="percentCalculator(this.id)"/>
-                      </th>
-                      <th id="P4"></th>
-                  </tr>
-              </table>
+                        <tr>
+                            <th>Activity 3</th>
+                            <th>A3</th>
+                            <th><input type="number" name="A3weight" id="A3weight" onchange="percentCalculator(this.id)" /></th>
+                            <th>
+                                <input type="number" name="A3score" id="A3score" onchange="percentCalculator(this.id)" /> /
+                                <input type="number" name="A3total" id="A3total" onchange="percentCalculator(this.id)" />
+                            </th>
+                            <th id="P3"></th>
+                        </tr>
 
-              <button type="button" onclick="addAssignment()">New Assignment</button>
-              <button type="button" onclick="removeAssignment()">Delete Assignment</button>
-              <!--Result section-->
-              <h3 id="result" class="red">Result:</h3>
-                  <div style="float: right">
-                      <button onclick="getWeight()" value="Submit" type="button">
+                        <tr>
+                            <th>Activity 4</th>
+                            <th>A4</th>
+                            <th><input type="number" name="A4weight" id="A4weight" onchange="percentCalculator(this.id)" /></th>
+                            <th>
+                                <input type="number" name="A4score" id="A4score" onchange="percentCalculator(this.id)" /> /
+                                <input type="number" name="A4total" id="A4total" onchange="percentCalculator(this.id)" />
+                            </th>
+                            <th id="P4"></th>
+                        </tr>
+                    </table>
+
+                    <button type="button" onclick="addAssignment()">New Assignment</button>
+                    <button type="button" onclick="removeAssignment()">Delete Assignment</button>
+                    <!--Result section-->
+                    <h3 id="result" class="red">Result:</h3>
+                    <div style="float: right">
+                        <button onclick="getWeight()" value="Submit" type="button">
                           WEIGHTED
                       </button>
-                      <button onclick="getMean()" value="Submit" type="button">
+                        <button onclick="getMean()" value="Submit" type="button">
                           MEAN
                       </button>
-                  </div>
-          </div>
-      </form>
-  <footer>
-      <br>
-      <br>
-  </footer>
+                    </div>
+                </div>
+            </form>
+            <footer>
+                <br>
+                <br>
+            </footer>
+        </div>
 
-</body>
+    </body>
+
 </html>
