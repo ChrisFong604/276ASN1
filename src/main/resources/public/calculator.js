@@ -57,6 +57,7 @@ function percentCalculator(id) {
             total = Number(document.getElementById(id).value);
             if (total <= 0 || score < 0 || (score > total)) {
                 document.getElementById("P" + id.charAt(1)).innerHTML = "";
+                percentages[Number(id.charAt(1))] = "invalid";
                 break;
             }
             percent = ((score / total) * 100).toFixed(2);
@@ -69,6 +70,7 @@ function percentCalculator(id) {
             total = Number(document.getElementById("A" + id.charAt(1) + "total").value);
             if (total <= 0 || score < 0 || (score > total)) {
                 document.getElementById("P" + id.charAt(1)).innerHTML = "";
+                percentages[Number(id.charAt(1))] = "invalid";
                 break;
             }
             percent = ((score / total) * 100).toFixed(2);
@@ -90,8 +92,13 @@ function getWeight() {
             actualAss--;
             continue;
         }
+        if (percentages[i] instanceof String) {
+            document.getElementById("result").innerHTML = "Invalid score inputted";
+            return;
+        }
         if (weights[i] <= 0) {
             document.getElementById("result").innerHTML = "Invalid weights inputted";
+            return;
         }
         rval += Number(percentages[i]) * Number(weights[i]);
         totalweight += Number(weights[i]);
@@ -112,6 +119,10 @@ function getMean() {
         if (percentages[i] === undefined) {
             actualAss--;
             continue;
+        }
+        if (percentages[i] instanceof String) {
+            document.getElementById("result").innerHTML = "Invalid score inputted";
+            return;
         }
         rval += Number(percentages[i]);
     }
