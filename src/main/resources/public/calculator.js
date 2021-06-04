@@ -21,11 +21,11 @@ function addAssignment() {
     Name.innerHTML = "Activity " + numAss;
     ShortName.innerHTML = "A" + numAss;
     Weight.innerHTML =
-        '<input type="number" ' + "name=" + IDtag + "weight " + "id=" + IDtag + "weight " + 'value="0" onchange="percentCalculator(this.id)"/>';
+        '<input type="number" name="${IDtag}weight" id="${IDtag}weight" value="0" onchange="percentCalculator(this.id)"/>';
     Grade.innerHTML =
-        '<input type="number" ' + "name=" + IDtag + "score " + "id=" + IDtag + "score " + 'value="0" onchange="percentCalculator(this.id)"/>' +
+        '<input type="number" name="${IDtag}score" id="${IDtag}score" value="0" onchange="percentCalculator(this.id)"/>' +
         "/" +
-        '<input type="number" ' + "name=" + IDtag + "total " + "id=" + IDtag + "total " + 'value="0" onchange="percentCalculator(this.id)"/>';
+        '<input type="number" name="${IDtag}total" id="${IDtag}total" value="0" onchange="percentCalculator(this.id)"/>';
     Percentage.id = "P" + numAss;
 
     row.appendChild(Name);
